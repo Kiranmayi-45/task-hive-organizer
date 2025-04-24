@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { Plus, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -64,9 +63,19 @@ const TaskManager = () => {
     .sort((a, b) => b.createdAt - a.createdAt);
 
   return (
-    <div className="min-h-screen p-4 bg-gradient-to-b from-gray-50 to-gray-100">
-      <div className="max-w-2xl mx-auto space-y-6">
-        <Card className="p-6">
+    <div 
+      className="min-h-screen p-4 bg-cover bg-center relative" 
+      style={{
+        backgroundImage: `
+          linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3)), 
+          url(https://images.unsplash.com/photo-1531297484001-80022131f5a1)
+        `,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
+      <div className="max-w-2xl mx-auto space-y-6 relative z-10">
+        <Card className="p-6 bg-white/85 backdrop-blur-sm">
           <h1 className="text-2xl font-semibold text-slate-800 mb-6">Task Manager</h1>
           
           <form onSubmit={addTask} className="flex gap-2 mb-6">
